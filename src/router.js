@@ -3,6 +3,10 @@ import RefsView from './refs/RefsView.vue'
 
 const routes = [
   {
+    path: '/',
+    redirect: '/refs',
+  },
+  {
     path: '/refs',
     name: 'refs',
     component: RefsView,
@@ -10,6 +14,6 @@ const routes = [
 ]
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/vue-composition/'),
   routes,
 })
