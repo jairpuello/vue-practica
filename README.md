@@ -1,26 +1,26 @@
 # vue-practica
 
-Ejercicios de Composition API en Vue 3.
+Ejercicios de Vue 3 para practicar la Composition API y afinar el resto del
+ecosistema: rutas, estado global, formularios y peticiones HTTP.
 
-Cada carpeta dentro de `src/` es un ejercicio. `App.vue` funciona como índice y
-tiene un enlace a cada uno.
+Cada carpeta es un proyecto independiente con su propio `package.json`, así que
+se instalan y se ejecutan por separado.
 
 ## Ejercicios
 
-| Ejercicio | Quéractices |
-|---|---|
-| `src/refs/` | `ref()` frente a `reactive()`, y qué pasa al desenrollar un objeto reactivo |
+| Carpeta | Tema | Qué se practica |
+|---|---|---|
+| [composition](composition/) | `ref()` y `reactive()` | Cuándo usar cada uno, y por qué mutar un objeto reactivo fuera de un proxy deja de ser reactivo |
 
-## Poner en marcha
-
-```bash
-npm install
-npm run dev
-```
-
-## Qué usa
+## Stack
 
 - Vue 3 con `<script setup>`
-- Vite como servidor de desarrollo y compilador
-- Tailwind CSS por CDN, sin instalar nada
+- Vite como servidor de desarrollo y como compilador
+- Tailwind CSS por CDN, sin instalarlo como dependencia
 - vue-router para las rutas de cada ejercicio
+
+## Cómo se trabaja
+
+Cada ejercicio se desarrolla por partes, con un commit por cada parte. El
+historial va por ramas estables con la misma convención de mensajes
+(`feat:`, `fix:`, `refactor:`, `chore:`, `docs:`).
