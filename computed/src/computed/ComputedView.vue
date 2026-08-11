@@ -3,16 +3,16 @@ import { computed, reactive } from 'vue'
 
 const state = reactive({
   articles: [
-    { id: 1, name: 'Cuaderno', price: 12.5, quantity: 2 },
-    { id: 2, name: 'Boligrafo', price: 1.75, quantity: 5 },
-    { id: 3, name: 'Mochila', price: 45, quantity: 1 },
+    { id: 1, name: 'Cuaderno', price: 12500, quantity: 2 },
+    { id: 2, name: 'Boligrafo', price: 1750, quantity: 5 },
+    { id: 3, name: 'Mochila', price: 45000, quantity: 1 },
   ],
   discount: 0,
 })
 
-const currency = new Intl.NumberFormat('es-ES', {
+const currency = new Intl.NumberFormat('es-CO', {
   style: 'currency',
-  currency: 'EUR',
+  currency: 'COP',
 })
 
 const subtotal = computed(() =>
