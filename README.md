@@ -11,6 +11,7 @@ se instalan y se ejecutan por separado.
 | Carpeta | Tema | Qué se practica |
 |---|---|---|
 | [composition](composition/) | `ref()` y `reactive()` | Cuándo usar cada uno, y por qué mutar un objeto reactivo fuera de un proxy deja de ser reactivo |
+| [computed](computed/) | Estado derivado | Crear valores que se calculan solos, frente a mantener una copia que hay que actualizar a mano |
 
 ## Stack
 
