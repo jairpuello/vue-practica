@@ -12,6 +12,7 @@ se instalan y se ejecutan por separado.
 |---|---|---|
 | [composition](composition/) | `ref()` y `reactive()` | Cuándo usar cada uno, y por qué mutar un objeto reactivo fuera de un proxy deja de ser reactivo |
 | [computed](computed/) | Estado derivado | Crear valores que se calculan solos, frente a mantener una copia que hay que actualizar a mano |
+| [pinia](pinia/) | Estado global | Separar el acceso a datos del estado, con getters que solo leen y actions que solo escriben |
 
 ## Stack
 
