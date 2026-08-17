@@ -14,8 +14,9 @@ Pinia.
 
 ## Qué muestra el ejercicio
 
-Por ahora, la base: la aplicación arranca con Pinia registrado y una vista
-provisional. El inventario y las ventas se agregan en etapas siguientes.
+La pantalla del catálogo: carga los productos desde el repositorio, los lista
+en una tabla con búsqueda y permite reintentar cuando la carga falla. El
+registro de ventas se agrega en etapas siguientes.
 
 ## Cómo se ejecuta
 
@@ -24,12 +25,12 @@ npm install
 npm run dev
 ```
 
-La ruta del ejercicio es `/principal`, y `/` redirige allí.
+La ruta del ejercicio es `/catalogo`, y `/` redirige allí.
 
 ## Archivos
 
-- `src/views/MainView.vue` — vista provisional
-- `src/stores/` — estado de Pinia
-- `src/api/` — repositorio HTTP
+- `src/views/CatalogoView.vue` — pantalla del catálogo
+- `src/stores/catalogo.js` — estado del catálogo y comandos
+- `src/api/productos.js` — repositorio de productos
 - `src/router.js` — rutas
 - `src/main.js` — arranque con Pinia y el router

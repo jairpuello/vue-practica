@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MainView from './views/MainView.vue'
+import CatalogoView from './views/CatalogoView.vue'
 
 const router = createRouter({
   history: createWebHistory('/vue-pinia/'),
   routes: [
     {
       path: '/',
-      redirect: '/principal'
+      redirect: '/catalogo'
     },
     {
-      path: '/principal',
-      name: 'main',
-      component: MainView
+      path: '/catalogo',
+      name: 'catalogo',
+      component: CatalogoView
     }
   ]
 })
