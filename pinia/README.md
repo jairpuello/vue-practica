@@ -31,6 +31,7 @@ La ruta del ejercicio es `/catalogo`, y `/` redirige allí.
 
 - `src/views/CatalogoView.vue` — pantalla del catálogo
 - `src/stores/catalogo.js` — estado del catálogo y comandos
+- `src/stores/venta.js` — estado de la venta, compone el catálogo
 - `src/api/productos.js` — repositorio de productos
 - `src/router.js` — rutas
 - `src/main.js` — arranque con Pinia y el router
