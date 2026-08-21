@@ -1,15 +1,9 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useCatalogoStore } from '../stores/catalogo.js'
+import { formatCurrency, formatInteger } from '../composables/formatters.js'
 
 const catalogo = useCatalogoStore()
-
-const currency = new Intl.NumberFormat('es-CO', {
-  style: 'currency',
-  currency: 'COP',
-})
-
-const integer = new Intl.NumberFormat('es-CO')
 
 onMounted(() => {
   catalogo.cargarCatalogo()
@@ -17,12 +11,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="min-h-screen bg-gray-100 px-6 py-10 sm:px-10 lg:px-16">
+  <main class="px-6 py-10 sm:px-10 lg:px-16">
     <section class="mx-auto max-w-6xl">
-      <header class="border-b border-gray-300 pb-6">
-        <p class="text-sm font-medium uppercase tracking-[0.2em] text-blue-700">Papelería</p>
-        <h1 class="mt-2 text-2xl font-semibold tracking-tight text-gray-950">Catálogo</h1>
-      </header>
+      <h1 class="text-2xl font-semibold tracking-tight text-gray-950">Catálogo</h1>
 
       <div v-if="catalogo.loadState === 'inactivo' || catalogo.loadState === 'cargando'" class="mt-8" role="status">
         <p class="text-sm text-gray-600">Cargando catálogo...</p>
@@ -59,11 +50,11 @@ onMounted(() => {
         <div class="mt-6 flex gap-6 text-sm text-gray-600">
           <p>
             Productos:
-            <span class="font-medium text-gray-900">{{ integer.format(catalogo.totalProductos) }}</span>
+            <span class="font-medium text-gray-900">{{ formatInteger(catalogo.totalProductos) }}</span>
           </p>
           <p>
             Existencias bajas:
-            <span class="font-medium text-gray-900">{{ integer.format(catalogo.existenciasBajas.length) }}</span>
+            <span class="font-medium text-gray-900">{{ formatInteger(catalogo.existenciasBajas.length) }}</span>
           </p>
         </div>
 
@@ -91,8 +82,8 @@ onMounted(() => {
                 <td class="px-4 py-3 text-gray-500">{{ product.id }}</td>
                 <td class="px-4 py-3 text-gray-900">{{ product.nombre }}</td>
                 <td class="px-4 py-3 text-gray-600">{{ product.categoria }}</td>
-                <td class="px-4 py-3 text-right tabular-nums text-gray-900">{{ currency.format(product.precio) }}</td>
-                <td class="px-4 py-3 text-right tabular-nums text-gray-900">{{ integer.format(product.existencia) }}</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-900">{{ formatCurrency(product.precio) }}</td>
+                <td class="px-4 py-3 text-right tabular-nums text-gray-900">{{ formatInteger(product.existencia) }}</td>
               </tr>
             </tbody>
           </table>
