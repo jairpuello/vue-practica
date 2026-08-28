@@ -50,7 +50,13 @@ onMounted(() => {
         <div class="mt-6 flex gap-6 text-sm text-gray-600">
           <p>
             Productos:
-            <span class="font-medium text-gray-900">{{ formatInteger(catalogo.totalProductos) }}</span>
+            <span v-if="catalogo.search.trim() === ''" class="font-medium text-gray-900">
+              {{ formatInteger(catalogo.totalProductos) }}
+            </span>
+            <span v-else class="font-medium text-gray-900">
+              {{ formatInteger(catalogo.productosFiltrados.length) }} de
+              {{ formatInteger(catalogo.totalProductos) }}
+            </span>
           </p>
           <p>
             Existencias bajas:
